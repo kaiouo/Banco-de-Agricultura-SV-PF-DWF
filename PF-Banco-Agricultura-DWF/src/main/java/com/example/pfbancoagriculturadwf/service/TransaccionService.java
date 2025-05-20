@@ -37,13 +37,14 @@ public class TransaccionService {
     }
 
     public String retirar(TransaccionRequest req) {
-        Cuenta cuenta = cuentaRepo.findByNumeroCuenta(req.getNuemroCuenta());
+        Cuenta cuenta = cuentaRepo.findByNumeroCuenta(req.getNumeroCuenta());
         if (cuenta==null || cuenta.getSaldo() < req.getMonto()) return "Fondos insuficientes";
         cuenta.setSaldo(cuenta.getSaldo() - req.getMonto());
         cuentaRepo.save(cuenta);
         return "Retiro realizado correctamente";
     }
 
+    @Autowired
     private MovimientoRepository movimientoRepo;
     private void registrarMovimiento(String tipo, Double monto, String numeroCuenta, String realizadoPor) {
         Movimiento m = new Movimiento();
