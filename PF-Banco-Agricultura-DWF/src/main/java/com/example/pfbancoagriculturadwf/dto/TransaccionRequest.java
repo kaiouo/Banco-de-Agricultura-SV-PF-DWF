@@ -8,8 +8,8 @@ public class TransaccionRequest {
     private Double monto;
     private String realizadoPor;
 
-    public String getNuemroCuenta() {return nuemroCuenta;}
-    public void setNuemroCuenta(String nuemroCuenta) {this.nuemroCuenta = nuemroCuenta;}
+    public String getNumeroCuenta() {return numeroCuenta;}
+    public void setNuemroCuenta(String numeroCuenta) {this.numeroCuenta = numeroCuenta;}
 
     public Double getMonto() {return monto;}
     public void setMonto(Double monto) {this.monto = monto;}
